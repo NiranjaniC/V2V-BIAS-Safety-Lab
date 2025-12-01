@@ -1,28 +1,59 @@
 # V2V-BIAS-Safety-Lab
-V2V Bias Safety Lab
-
+# V2V BIAS Safety Lab  
 An interactive web-based platform to detect, visualize, and audit algorithmic bias and privacy risks in Vehicle-to-Vehicle (V2V) datasets.
 
-Purpose
+---
 
-Promote ethical and transparent AI in V2V systems
+## 1. Objective  
+To promote ethical and transparent AI in V2V safety systems by analyzing datasets for:
 
-Detect algorithmic bias in datasets and models
+- Algorithmic Bias  
+- Privacy Vulnerabilities  
+- Scenario-based risk behaviour  
+- Fairness & transparency metrics  
 
-Analyze privacy risks in connected vehicle communication
+---
 
-Enable visualization, simulation, and report generation
+## 2. Core Modules  
 
-Project Modules
+### 🔹 Data Ingestion  
+Upload/import V2V datasets (speed, location, weather, VRU).
 
-Data Preprocessing
+### 🔹 Data Preprocessing  
+Cleaning, normalization, anonymization.
 
-Bias Detection Module
+### 🔹 Bias Detection Module  
+- Fairness metrics (DP, EO, EOd)  
+- Bias distribution plots  
 
-Privacy Audit Module
+### 🔹 Privacy Audit Module  
+- Re-identification risk  
+- Location tracking exposure  
+- Data leak simulations  
 
-Simulation Engine
+### 🔹 Simulation Module  
+Run urban/highway/rainy/night V2V scenarios with VRU.
 
-Ethical Dashboard
+### 🔹 Visualization Dashboard  
+Interactive charts, tables, fairness & privacy scores.
 
-PDF Reporting
+### 🔹 Reporting Module  
+PDF/CSV export of audit results.
+
+---
+
+## 3. Project Structure  
+V2V-BIAS-Safety-Lab/
+|-- data/
+|-- src/
+|-- reports/
+|-- docs/
+|-- README.md
+
+
+---
+
+
+
+
+
