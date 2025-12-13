@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>V2V-BIAS Safety Lab</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <header>
+    <h1>V2V-BIAS Safety Lab</h1>
+    <nav>
+      <button onclick="showSection('home')">Home</button>
+      <button onclick="showSection('data')">Data Ingestion</button>
+      <button onclick="showSection('preprocessing')">Preprocessing</button>
+      <button onclick="showSection('bias')">Bias Detection</button>
+      <button onclick="showSection('privacy')">Privacy Audit</button>
+      <button onclick="showSection('simulation')">Simulation</button>
+      <button onclick="showSection('dashboard')">Dashboard</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="active">
+      <h2>Welcome to V2V-BIAS Safety Lab</h2>
+      <p>
+        A web-based ethical auditing and analysis platform designed to evaluate bias, privacy risks, and safety concerns in Vehicle-to-Vehicle (V2V) communication systems.This platform enables users to upload real-world datasets, perform preprocessing, detect bias patterns, audit sensitive information, and run safety simulations—particularly focusing on the impact on <strong>Vulnerable Road Users (VRUs)</strong> such as pedestrians and cyclists.By combining data analytics, ethical AI evaluation, and interactive visualization, the V2V-BIAS Safety Lab promotes transparency, fairness, and trust in next-generation V2V safety systems.
+      </p>
+    </section>
+
+    <!-- DATA INGESTION -->
+    <section id="data">
+      <h2>Data Ingestion</h2>
+      <input type="file" id="fileInput">
+      <button onclick="uploadFile()">Upload</button>
+      <table id="datasetTable">
+        <thead>
+          <tr><th>Filename</th><th>Rows</th><th>Columns</th><th>Preview</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div id="previewDiv"></div>
+    </section>
+
+    <!-- PREPROCESSING -->
+    <section id="preprocessing">
+      <h2>Preprocessing</h2>
+      <label for="preprocessFileSelect">Select Dataset:</label>
+      <select id="preprocessFileSelect"></select>
+      <button onclick="previewPreprocess()">Preview</button>
+      <button onclick="summaryPreprocess()">Summary</button>
+      <button onclick="cleanPreprocess()">Clean Dataset</button>
+      <button onclick="convertPreprocess()">Convert to CSV</button>
+      <div id="preprocessPreview"></div>
+      <div id="preprocessSummary"></div>
+      <div id="preprocessResult"></div>
+    </section>
+
+    <!-- BIAS DETECTION -->
+    <section id="bias">
+      <h2>Bias Detection</h2>
+      <label for="biasFileSelect">Select Dataset:</label>
+      <select id="biasFileSelect"></select>
+      <label for="targetColumn">Target Column:</label>
+      <input type="text" id="targetColumn" value="collision_risk">
+      <button onclick="loadBiasOverview()">Overview</button>
+      <button onclick="loadClassImbalance()">Class Imbalance</button>
+      <button onclick="loadMissingBias()">Missing Values</button>
+      <button onclick="loadNumericBias()">Numeric Bias</button>
+      <div id="biasOverview"></div>
+      <div id="missingBias"></div>
+      <div id="numericBias"></div>
+      <canvas id="imbalanceChart" width="400" height="400"></canvas>
+      <canvas id="missingChart" width="400" height="400"></canvas>
+      <canvas id="numericChart" width="400" height="400"></canvas>
+    </section>
+
+    <!-- PRIVACY AUDIT -->
+    <section id="privacy">
+      <h2>Privacy Audit</h2>
+      <input type="file" id="privacyFileInput">
+      <button onclick="runPrivacyAudit()">Run Audit</button>
+      <canvas id="privacyChart" width="400" height="400"></canvas>
+      <div id="privacyDetails"></div>
+      <div id="privacyRecommendations"></div>
+    </section>
+
+    <!-- SIMULATION -->
+    <section id="simulation">
+      <h2>Simulation Engine</h2>
+      <label>Vehicle Speed (km/h): <input type="number" id="vehicleSpeed" value="50"></label><br>
+      <label>VRU Distance (m): <input type="number" id="vruDistance" value="30"></label><br>
+      <label>VRU Type:
+        <select id="vruType">
+          <option value="pedestrian">Pedestrian</option>
+          <option value="cyclist">Cyclist</option>
+          <option value="2-wheeler">2-Wheeler</option>
+          <option value="animal">Animal</option>
+        </select>
+      </label><br>
+      <label>Weather:
+        <select id="weather">
+          <option value="clear">Clear</option>
+          <option value="rain">Rain</option>
+          <option value="fog">Fog</option>
+          <option value="snow">Snow</option>
+        </select>
+      </label><br>
+      <label>Lighting:
+        <select id="lighting">
+          <option value="day">Day</option>
+          <option value="night">Night</option>
+        </select>
+      </label><br>
+      <button onclick="runSimulation()">Run Simulation</button>
+      <div id="simulationResult"></div>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+      <label for="dashboardFileSelect">Select Dataset:</label>
+      <select id="dashboardFileSelect"></select>
+      <button onclick="loadDashboardSummary()">Load Dashboard</button>
+      <div id="dashboardSummary"></div>
+      <h4>Vehicle Distribution</h4>
+      <canvas id="vehicleChart" width="400" height="400"></canvas>
+      <h4>Collision Risk</h4>
+      <canvas id="collisionChart" width="400" height="400"></canvas>
+      <h4>Environment (Weather & Lighting)</h4>
+      <canvas id="environmentChart" width="400" height="400"></canvas>
+      <h4>Speed Stats</h4>
+      <div id="speedStats"></div>
+      <h4>VRU Distance Stats</h4>
+      <div id="vruStats"></div>
+    </section>
+  </main>
+  <script src="./chart.umd.min.js"></script>
+  <script src="home.js" defer></script>
+</body>
+</html>
