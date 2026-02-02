@@ -1,57 +1,105 @@
-## V2V-BIAS Safety Lab
+# V2V-BIAS Safety Lab
 
-An interactive web-based platform for bias detection, privacy auditing, simulation, and visualization in Vehicle-to-Vehicle (V2V) safety datasets.
-The system helps ensure fair, ethical, and reliable decision-making in intelligent transportation systems.
+A Web-Based Data Analytics Platform for Bias, Privacy, and Safety Auditing in V2V Systems
 
-## Project Overview
+# Overview
 
-The V2V-BIAS Safety Lab analyzes vehicular datasets before model training to identify:
+- V2V-BIAS Safety Lab is a web-based analytical auditing platform designed to evaluate dataset bias, privacy risks, and safety concerns in Vehicle-to-Vehicle (V2V) communication systems.
 
-- Data bias affecting safety decisions
+- The platform enables users to upload real-world datasets, perform preprocessing and exploratory data analysis, detect bias patterns, audit sensitive information, and run scenario-based safety simulations, with a specific focus on Vulnerable Road Users (VRUs) such as pedestrians and cyclists.
 
-- Privacy risks in shared vehicular information
+- This project emphasizes Responsible AI, transparency, and fairness in data-driven intelligent transportation systems.
 
-- Collision risk patterns involving vulnerable road users (VRUs)
+# Problem Statement
 
-The platform uses a FastAPI backend, HTML/CSS/JavaScript frontend, and local file storage instead of a database for simplicity and transparency.
+- Datasets used in autonomous and V2V systems may unintentionally contain:
 
-## System Modules
+- Bias due to class imbalance or skewed distributions
 
-1.Data Ingestion
+- Privacy risks caused by sensitive or identifiable attributes
 
-2.Preprocessing
+- Safety risks when deployed without proper scenario evaluation
 
-3.Bias Detection
+- This project addresses these challenges by providing a pre-deployment analytical auditing framework.
 
-4.Privacy Audit
+# Key Features & Analytics
+## 1. Data Ingestion & Preprocessing
 
-5.Simulation
+- Upload CSV datasets
 
-6.Dashboard
+- Preview dataset structure
 
-## Technologies Used Backend
+- Identify missing values and data types
 
-- Python
+- Clean and export processed datasets
 
-- FastAPI
+## 2. Bias Detection & Analysis
 
-- Pandas
+- Class imbalance analysis
 
-- NumPy
+- Skewness and numeric bias detection
 
-- Frontend
+- Outlier identification
 
-- HTML
+- Composite Bias Score to quantify dataset fairness
 
-- CSS
+## 3. Privacy Audit
 
-- JavaScript
+- Detection of sensitive and potentially identifiable attributes
 
-- Storage
+- Privacy exposure assessment
 
-- Local File System (CSV files)
+- Risk-level classification (Safe / Exposed)
 
-## Project Structure
+## 4. Safety Simulation Engine
+
+- Scenario-based simulations using parameters such as:
+
+- Vehicle speed
+
+- Distance to VRU
+
+- Weather conditions
+
+- Lighting conditions
+
+- Risk scoring and collision likelihood estimation
+
+- Focus on pedestrian and cyclist safety
+
+## 5. Interactive Dashboards
+
+- Visual summaries of bias, risk, and dataset distributions
+
+- Charts for collision risk, environment conditions, and vehicle types
+
+- Insight-driven visualization for decision support
+
+# Tech Stack
+
+- Backend: Python, FastAPI
+
+- Data Analytics: Pandas, NumPy
+
+- Frontend: HTML, CSS, JavaScript
+
+- Visualization: Chart.js
+
+# Architecture / Workflow
+
+- Dataset Upload
+
+- Data Preprocessing & Summary
+
+- Bias Detection & Scoring
+
+- Privacy Audit
+
+- Safety Simulation
+
+- Dashboard Visualization
+
+# Project Structure
 
 ## Backend:
 - main.py – Entry point of the FastAPI application
@@ -73,19 +121,7 @@ The platform uses a FastAPI backend, HTML/CSS/JavaScript frontend, and local fil
 ## Documentation:
 - README.md – Project documentation
 
-
-
-- How to Run the Project
-
-- Start Backend
-uvicorn main:app --reload
-
-- Open Frontend
-
-- Open frontend/home.html in a browser
-(or use Live Server in VS Code)
-
-## Sample Outputs
+# Sample Outputs
 <img width="1916" height="697" alt="Screenshot 2025-12-13 223051" src="https://github.com/user-attachments/assets/6fe8a0dc-3c45-4dae-bfcb-8188c1ce4f2f" />
 
 <img width="1919" height="924" alt="Screenshot 2025-12-13 223631" src="https://github.com/user-attachments/assets/55b37318-3121-4b2a-a453-0fac94609469" />
@@ -100,26 +136,64 @@ uvicorn main:app --reload
 
 <img width="1919" height="977" alt="Screenshot 2025-12-13 230816" src="https://github.com/user-attachments/assets/43ead11e-95f6-4065-96e4-dff85182700f" />
 
-## Key Features
+# How to Run the Project
 
-- Bias-aware V2V dataset analysis
+## Prerequisites
 
-- Privacy-preserving safety auditing
+- Python 3.8+
 
-- Rule-based collision risk simulation
+- pip
 
-- Interactive visualization dashboard
+## Steps
 
-- Modular and scalable architecture
+- Clone the repository
+git clone https://github.com/NiranjaniC/V2V-BIAS-Safety-Lab.git
 
-## Future Enhancements
+- Navigate to backend
+cd V2V-BIAS-Safety-Lab/backend
 
-- Integration of real-time V2V/V2X data
+- Install dependencies
+pip install -r requirements.txt
 
-- Machine learning-based bias prediction
+- Run FastAPI server
+uvicorn main:app --reload
 
-- Explainable AI (XAI) for safety decisions
+- Open the frontend (index.html) in a browser
 
-- Cloud deployment and blockchain-based data security
+- Access backend APIs via http://127.0.0.1:8000
 
-- Federated learning for privacy preservation
+# Skills Demonstrated
+
+- Data Analytics & Exploratory Data Analysis (EDA)
+
+- Statistical Reasoning & Metric Design
+
+- Ethical / Responsible AI Evaluation
+
+- Scenario-Based Risk Analysis
+
+- Data Visualization & Insight Communication
+
+- Backend API Development
+
+# Impact & Relevance
+
+- This project aligns with:
+
+- Responsible AI principles
+
+- UN Sustainable Development Goals
+
+- Ethical deployment of intelligent transportation systems
+
+- It demonstrates how data analytics can be used beyond prediction — for fairness, safety, and trust.
+
+# Future Enhancements
+
+- Integration with larger real-world datasets
+
+- Advanced bias metrics (fairness indicators)
+
+- Role-based access and authentication
+
+- Live deployment and real-time data streams
